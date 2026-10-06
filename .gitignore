@@ -44,7 +44,8 @@ Thumbs.db
 .env.*
 application-local.properties
 application-*.properties
+application-local.yaml
+application-*.yaml
 
 # Java
 *.class
-
