@@ -1,6 +1,6 @@
-package com.arcade.alibou;
+package com.arcade.alibou.repository;
 
-import com.arcade.alibou.Domain.Student;
+import com.arcade.alibou.domain.Student;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

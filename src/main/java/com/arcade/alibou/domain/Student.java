@@ -1,6 +1,7 @@
-package com.arcade.alibou.Domain;
+package com.arcade.alibou.domain;
 
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import lombok.AllArgsConstructor;
@@ -38,6 +39,7 @@ public class Student {
 
     @ManyToOne
     @JoinColumn(name = "schoolId")
+    @JsonBackReference
     private School school;
 
 }

@@ -1,5 +1,6 @@
-package com.arcade.alibou.Domain;
+package com.arcade.alibou.domain;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -24,6 +25,7 @@ public class School {
 
 
     @OneToMany(mappedBy = "school")
+    @JsonManagedReference
     private List<Student> students;
 
 

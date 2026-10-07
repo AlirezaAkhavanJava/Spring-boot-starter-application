@@ -1,4 +1,4 @@
-package com.arcade.alibou.Domain;
+package com.arcade.alibou.domain;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
