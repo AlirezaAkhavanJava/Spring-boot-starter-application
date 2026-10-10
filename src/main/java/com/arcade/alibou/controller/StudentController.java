@@ -3,6 +3,7 @@ package com.arcade.alibou.controller;
 import com.arcade.alibou.domain.School;
 import com.arcade.alibou.domain.Student;
 import com.arcade.alibou.domain.dto.StudentDto;
+import com.arcade.alibou.domain.dto.StudentResponseDto;
 import com.arcade.alibou.repository.StudentRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -20,14 +21,15 @@ public class StudentController {
 
     @PostMapping("/new")
     @ResponseStatus(HttpStatus.CREATED)
-    public Student createNew(@RequestBody StudentDto studentDto) {
+    public StudentResponseDto createNew(@RequestBody StudentDto studentDto) {
         var student = toStudent(studentDto);
-        return repository.save(student);
+        var saveStudent = repository.save(student);
+        return toStudentResponseDto(saveStudent);
     }
 
 
     //Mapper --- I put it here coz that fuzzy brain piece of shit did
-    public Student toStudent(StudentDto dto) {
+    private Student toStudent(StudentDto dto) {
         var student = new Student();
         var school = new School();
         school.setId(dto.schoolId());
@@ -39,6 +41,12 @@ public class StudentController {
 
         return student;
     }
+
+    //Mapper --- I put it here coz that fuzzy brain piece of shit did
+    private StudentResponseDto toStudentResponseDto(Student student) {
+        return new StudentResponseDto(student.getFirstName(), student.getLastName(), student.getEmail());
+    }
+
 
     @GetMapping("/")
     public List<Student> allStudents() {
