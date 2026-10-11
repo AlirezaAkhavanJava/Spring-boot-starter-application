@@ -1,4 +1,4 @@
-package com.arcade.alibou.service;
+package com.arcade.alibou.service.student;
 
 import com.arcade.alibou.domain.dto.StudentDto;
 import com.arcade.alibou.domain.dto.StudentResponseDto;

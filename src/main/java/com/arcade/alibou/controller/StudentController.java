@@ -2,7 +2,7 @@ package com.arcade.alibou.controller;
 
 import com.arcade.alibou.domain.dto.StudentDto;
 import com.arcade.alibou.domain.dto.StudentResponseDto;
-import com.arcade.alibou.service.StudentService;
+import com.arcade.alibou.service.student.StudentService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
