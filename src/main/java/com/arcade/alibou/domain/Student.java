@@ -17,6 +17,8 @@ import lombok.Setter;
 @Table(name = "student")
 public class Student {
 
+    //DDL in Database
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
@@ -24,7 +26,7 @@ public class Student {
     @Column(length = 100, nullable = false)
     private String firstName;
 
-    @Column(length = 120)
+    @Column(length = 120, nullable = false)
     private String lastName;
 
     @Email

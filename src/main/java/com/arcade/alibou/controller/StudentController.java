@@ -3,10 +3,15 @@ package com.arcade.alibou.controller;
 import com.arcade.alibou.domain.dto.StudentDto;
 import com.arcade.alibou.domain.dto.StudentResponseDto;
 import com.arcade.alibou.service.student.StudentService;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.validation.FieldError;
+import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.HashMap;
 import java.util.List;
 
 @RequiredArgsConstructor
@@ -19,7 +24,11 @@ public class StudentController {
 
     @PostMapping("/new")
     @ResponseStatus(HttpStatus.CREATED)
-    public StudentResponseDto createNew(@RequestBody StudentDto studentDto) {
+    public StudentResponseDto createNew(
+            @RequestBody
+            @Valid
+            StudentDto studentDto
+    ) {
         return service.createNew(studentDto);
     }
 
@@ -45,5 +54,8 @@ public class StudentController {
     public void removeStudent(@PathVariable(name = "id") Integer id) {
         service.removeStudent(id);
     }
+
+
+
 
 }
