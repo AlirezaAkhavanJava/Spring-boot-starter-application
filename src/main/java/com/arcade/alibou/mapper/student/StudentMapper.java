@@ -9,5 +9,5 @@ import java.util.List;
 public interface StudentMapper {
     Student toStudent(StudentDto dto);
     StudentResponseDto toStudentResponseDto(Student student);
-    public StudentDto toStudentDto(Student student);
+    StudentDto toStudentDto(Student student);
 }

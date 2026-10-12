@@ -36,7 +36,7 @@ public class Student {
     @Column(name = "age")
     private int age;
 
-    @OneToOne(mappedBy = "student" , cascade = CascadeType.ALL)
+    @OneToOne(mappedBy = "student", cascade = CascadeType.ALL)
     private StudentProfile studentProfile;
 
     @ManyToOne
@@ -44,4 +44,10 @@ public class Student {
     @JsonBackReference
     private School school;
 
+    public Student(String firstName, String lastName, String email, int age ) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.age = age;
+    }
 }
